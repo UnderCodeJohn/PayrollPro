@@ -1,0 +1,8 @@
+.login_pane {
+    -fx-background-color: #ffffff; /* Set the desired background color */
+    -fx-border-color: #ffffff; /* Set the border color */
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px; /* Set the border radius for rounded corners */
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}
