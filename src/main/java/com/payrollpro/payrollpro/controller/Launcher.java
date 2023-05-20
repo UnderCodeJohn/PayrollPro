@@ -1,13 +1,10 @@
-package com.payrollpro.payrollpro;
+package com.payrollpro.payrollpro.controller;
 
+import com.payrollpro.payrollpro.Interface.ViewChangeHelper;
 import com.payrollpro.payrollpro.utils.JDBC;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,19 +12,7 @@ import java.io.IOException;
 /**
  * The Launcher class is responsible for launching the Payroll Pro application.
  */
-public class Launcher extends Application {
-
-    /**
-     * The entry point of the application.
-     *
-     * @param args The command-line arguments.
-     */
-    public static void main(String[] args) {
-        JDBC.openConnection();
-        JDBC.closeConnection();
-        launch();
-        System.out.println("Hello");
-    }
+public class Launcher extends Application implements ViewChangeHelper {
 
     /**
      * Starts the application and initializes the main stage.
@@ -42,5 +27,17 @@ public class Launcher extends Application {
         stage.setTitle("Payroll Pro");
         stage.setScene(scene);
         stage.show();
+    }
+
+    /**
+     * The entry point of the application.
+     *
+     * @param args The command-line arguments.
+     */
+    public static void main(String[] args) {
+        JDBC.openConnection();
+        launch();
+        System.out.println("Hello");
+        JDBC.closeConnection();
     }
 }

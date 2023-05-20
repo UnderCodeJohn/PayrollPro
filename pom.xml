@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.payrollpro.payrollpro/com.payrollpro.payrollpro.Launcher</mainClass>
+                            <mainClass>com.payrollpro.payrollpro/com.payrollpro.payrollpro.controller.Launcher</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+<HBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.payrollpro.payrollpro.controller.NavBarController">
+    <Button text="Home" onAction="#handleHomeButton" />
+    <Button text="Profile" onAction="#handleProfileButton" />
+    <!-- Add more navigation buttons as needed -->
+</HBox>
