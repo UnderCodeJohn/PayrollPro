@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36181bfd-f849-49c6-9318-a68d8a4a9343" name="Changes" comment="modified the interface for handling error message when text field or blank for the phone field&#10;created SQL query to add an employee and user">
+    <list default="true" id="36181bfd-f849-49c6-9318-a68d8a4a9343" name="Changes" comment="fixed bug in the module-info.java. able to populate employee table with employee information">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/EditEmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/edit-employee-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/AddEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/AddEmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/ManageEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/ManageEmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/utils/EmployeeQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/utils/EmployeeQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/manage-employee-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/manage-employee-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/add-employee-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/add-employee-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -121,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684683797692</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed bug in the module-info.java. able to populate employee table with employee information">
+      <created>1684689032816</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684689032816</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +149,7 @@
     <MESSAGE value="started creating the functionalities for the employee section add, edit, delete" />
     <MESSAGE value="created an interface for handling error message when text field or blank" />
     <MESSAGE value="modified the interface for handling error message when text field or blank for the phone field&#10;created SQL query to add an employee and user" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified the interface for handling error message when text field or blank for the phone field&#10;created SQL query to add an employee and user" />
+    <MESSAGE value="fixed bug in the module-info.java. able to populate employee table with employee information" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug in the module-info.java. able to populate employee table with employee information" />
   </component>
 </project>

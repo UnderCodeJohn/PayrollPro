@@ -6,6 +6,7 @@ import com.payrollpro.payrollpro.utils.EmployeeQuery;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -31,6 +32,7 @@ public class ManageEmployeeController implements Initializable, ViewChangeHelper
     public TableColumn jobTitleCol;
     public TableColumn userIdCol;
     public ObservableList <Employee> allEmployees = EmployeeQuery.getAllEmployees();
+    public static Employee SEmployee;
 
     public ManageEmployeeController() throws SQLException {
     }
@@ -54,12 +56,25 @@ public class ManageEmployeeController implements Initializable, ViewChangeHelper
         changeViewAndCenter("add-employee-view.fxml",rootPane);
     }
 
-    public void editEmployee(ActionEvent actionEvent) {
+    public void editEmployee(ActionEvent actionEvent) throws IOException {
+
+        SEmployee = (Employee) employeeTable.getSelectionModel().getSelectedItem();
+        if(SEmployee == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("No Employee selected");
+            alert.showAndWait();
+        } else {
+            changeViewAndCenter("edit-employee-view.fxml",rootPane);
+        }
     }
 
     public void deleteEmployee(ActionEvent actionEvent) {
     }
 
-    public void backToHome(ActionEvent actionEvent) {
+    public void backToHome(ActionEvent actionEvent) throws IOException {
+        changeViewAndCenter("admin-view.fxml",rootPane);
     }
+
+    public Employee passEmployee(){return SEmployee;}
 }

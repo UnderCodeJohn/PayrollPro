@@ -60,4 +60,18 @@ public abstract class EmployeeQuery {
         insertEmployeePs.executeUpdate();
     }
 
+    public static void updateEmployee(Employee employee) throws SQLException {
+        String sql = "UPDATE employees SET Employee_name = ?, Address = ?, Postal_Code = ?, Phone = ?, Email = ?, Job_Title = ? WHERE Employee_ID = ?";
+        PreparedStatement ps = JDBC.connection.prepareStatement(sql);
+        ps.setString(1, employee.getName());
+        ps.setString(2, employee.getAddress());
+        ps.setString(3, employee.getPostalCode());
+        ps.setString(4, employee.getPhone());
+        ps.setString(5, employee.getEmail());
+        ps.setString(6, employee.getJobTitle());
+        ps.setInt(7, employee.getEmployeeId());
+
+        ps.executeUpdate();
+    }
+
 }
