@@ -3,6 +3,7 @@ package com.payrollpro.payrollpro.Interface;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
@@ -20,6 +21,13 @@ public interface ViewChangeHelper {
         AnchorPane.setLeftAnchor(newView, 0.0);
         AnchorPane.setRightAnchor(newView, 0.0);
         AnchorPane.setBottomAnchor(newView, 0.0);
+    }
+
+    default void centerView(VBox containerPane){
+        AnchorPane.setTopAnchor(containerPane, 0.0);
+        AnchorPane.setLeftAnchor(containerPane, 0.0);
+        AnchorPane.setRightAnchor(containerPane, 0.0);
+        AnchorPane.setBottomAnchor(containerPane, 0.0);
     }
 }
 

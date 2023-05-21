@@ -37,7 +37,6 @@ public class Launcher extends Application implements ViewChangeHelper {
     public static void main(String[] args) {
         JDBC.openConnection();
         launch();
-        System.out.println("Hello");
         JDBC.closeConnection();
     }
 }

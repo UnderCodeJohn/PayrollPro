@@ -41,13 +41,10 @@ public class LoginController implements Initializable , ViewChangeHelper {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Set the login pane's style class for styling purposes
-        loginPane.getStyleClass().add("login_pane");
+        loginPane.getStyleClass().add("main_pane");
 
         // Set the container pane's anchor properties to fill the parent anchor pane
-        AnchorPane.setTopAnchor(containerPane, 0.0);
-        AnchorPane.setLeftAnchor(containerPane, 0.0);
-        AnchorPane.setRightAnchor(containerPane, 0.0);
-        AnchorPane.setBottomAnchor(containerPane, 0.0);
+        centerView(containerPane);
     }
 
     public void onLogin(ActionEvent actionEvent) throws SQLException, IOException {
