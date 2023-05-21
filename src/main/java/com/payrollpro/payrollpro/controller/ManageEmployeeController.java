@@ -3,6 +3,7 @@ package com.payrollpro.payrollpro.controller;
 import com.payrollpro.payrollpro.Interface.ViewChangeHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -16,12 +17,17 @@ public class ManageEmployeeController implements Initializable, ViewChangeHelper
     public VBox containerPane;
     public VBox employeePane;
     public TableView employeeTable;
+    public TableColumn idCol;
+    public TableColumn nameCol;
+    public TableColumn addressCol;
+    public TableColumn postalCodeCol;
+    public TableColumn emailCol;
+    public TableColumn jobTitleCol;
+    public TableColumn userIdCol;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         employeePane.getStyleClass().add("main_pane");
-
         centerView(containerPane);
     }
     public void addEmployee(ActionEvent actionEvent) throws IOException {

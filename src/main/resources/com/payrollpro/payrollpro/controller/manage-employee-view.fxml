@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.payrollpro.payrollpro.controller.ManageEmployeeController">
    <children>
       <VBox fx:id="containerPane" alignment="CENTER" fillWidth="false" prefHeight="600.0" prefWidth="750.0">
@@ -36,13 +35,13 @@
                   </HBox>
                    <TableView fx:id="employeeTable" prefHeight="400" prefWidth="616.0">
                        <columns>
-                           <TableColumn prefWidth="92.0" text="Employee ID" />
-                           <TableColumn prefWidth="106.0" text="Employee Name" />
-                           <TableColumn prefWidth="59.0" text="Address" />
-                           <TableColumn prefWidth="78.0" text="Postal Code" />
-                           <TableColumn prefWidth="92.0" text="Email" />
-                           <TableColumn prefWidth="96.0" text="Job Title" />
-                           <TableColumn prefWidth="90.0" text="User ID" />
+                           <TableColumn fx:id="idCol" prefWidth="92.0" text="Employee ID" />
+                           <TableColumn fx:id="nameCol" prefWidth="106.0" text="Employee Name" />
+                           <TableColumn fx:id="addressCol" prefWidth="59.0" text="Address" />
+                           <TableColumn fx:id="postalCodeCol" prefWidth="78.0" text="Postal Code" />
+                           <TableColumn fx:id="emailCol" prefWidth="92.0" text="Email" />
+                           <TableColumn fx:id="jobTitleCol" prefWidth="96.0" text="Job Title" />
+                           <TableColumn fx:id="userIdCol" prefWidth="90.0" text="User ID" />
                        </columns>
                      <VBox.margin>
                         <Insets />
@@ -51,7 +50,7 @@
                   <HBox alignment="CENTER" prefHeight="25.0" prefWidth="561.0" spacing="130.0">
                      <children>
                      
-                                           <Button onAction="#addEmployee" text="Add Employee" />
+                         <Button onAction="#addEmployee" text="Add Employee" />
                          <Button onAction="#editEmployee" text="Edit Employee" />
                          <Button onAction="#deleteEmployee" text="Delete Employee" />
                      </children>

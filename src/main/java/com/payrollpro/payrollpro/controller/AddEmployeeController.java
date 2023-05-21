@@ -2,16 +2,19 @@ package com.payrollpro.payrollpro.controller;
 
 import com.payrollpro.payrollpro.Interface.ErrorMessage;
 import com.payrollpro.payrollpro.Interface.ViewChangeHelper;
+import com.payrollpro.payrollpro.model.Employee;
+import com.payrollpro.payrollpro.model.User;
+import com.payrollpro.payrollpro.utils.EmployeeQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddEmployeeController implements Initializable, ViewChangeHelper, ErrorMessage {
@@ -41,6 +44,9 @@ public class AddEmployeeController implements Initializable, ViewChangeHelper, E
     public Label jobTitleError;
     public Label usernameError;
     public Label passwordError;
+    public Label phoneError;
+    public TextField phoneField;
+    public Label phoneLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,23 +54,19 @@ public class AddEmployeeController implements Initializable, ViewChangeHelper, E
         centerView(containerPane);
     }
 
-    public void addEmployee(ActionEvent actionEvent) {
+    public void addEmployee(ActionEvent actionEvent) throws SQLException {
 
-        String[] fields = {employeeNameField.getText(), addressField.getText(), postalCodeField.getText(), emailField.getText(), jobTitleField.getText(), usernameField.getText(), passwordField.getText()};
-        TextField[] textFields = {employeeNameField, addressField, postalCodeField, emailField, jobTitleField, usernameField, passwordField};
-        Label[] labels = {nameLabel, addressLabel, postalLabel, emailLabel, jobTitleLabel, usernameLabel, passwordLabel};
-        Label[] errorLabels = {nameError, addressError, postalError, emailError, jobTitleError, usernameError, passwordError};
+        String[] fields = {employeeNameField.getText(), addressField.getText(), postalCodeField.getText(), phoneField.getText(), emailField.getText(), jobTitleField.getText(), usernameField.getText(), passwordField.getText()};
+        TextField[] textFields = {employeeNameField, addressField, postalCodeField, phoneField, emailField, jobTitleField, usernameField, passwordField};
+        Label[] labels = {nameLabel, addressLabel, postalLabel, phoneLabel, emailLabel, jobTitleLabel, usernameLabel, passwordLabel};
+        Label[] errorLabels = {nameError, addressError, postalError, phoneError, emailError, jobTitleError, usernameError, passwordError};
 
         boolean isValid = isErrorMessage(fields, textFields, labels, errorLabels);
 
         if (isValid) {
-            System.out.println(employeeNameField.getText());
-            System.out.println(addressField.getText());
-            System.out.println(postalCodeField.getText());
-            System.out.println(emailField.getText());
-            System.out.println(jobTitleField.getText());
-            System.out.println(usernameField.getText());
-            System.out.println(passwordField.getText());
+            Employee newEmployee = new Employee(-1, employeeNameField.getText(), addressField.getText(), postalCodeField.getText(), phoneField.getText(), emailField.getText(), jobTitleField.getText(),-1);
+            User newUser = new User(-1,usernameField.getText(), passwordField.getText(), -1);
+            EmployeeQuery.addEmployee(newEmployee, newUser);
         }
     }
 

@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36181bfd-f849-49c6-9318-a68d8a4a9343" name="Changes" comment="started creating the functionalities for the employee section add, edit, delete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/Interface/ErrorMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/AddEmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/add-employee-view.fxml" afterDir="false" />
+    <list default="true" id="36181bfd-f849-49c6-9318-a68d8a4a9343" name="Changes" comment="created an interface for handling error message when text field or blank">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/utils/EmployeeQuery.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/Interface/ViewChangeHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/Interface/ViewChangeHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/Interface/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/Interface/ErrorMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/AddEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/AddEmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/ManageEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/payrollpro/payrollpro/controller/ManageEmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/admin-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/admin-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/admin-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/main-css.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/main-css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/add-employee-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/add-employee-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/manage-employee-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/payrollpro/payrollpro/controller/manage-employee-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +22,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -117,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684583867150</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="created an interface for handling error message when text field or blank">
+      <created>1684673770735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684673770735</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +133,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="started login page design and functionality" />
     <MESSAGE value="started creating the functionalities for the employee section add, edit, delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="started creating the functionalities for the employee section add, edit, delete" />
+    <MESSAGE value="created an interface for handling error message when text field or blank" />
+    <option name="LAST_COMMIT_MESSAGE" value="created an interface for handling error message when text field or blank" />
   </component>
 </project>
