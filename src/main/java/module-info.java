@@ -4,6 +4,7 @@ module com.payrollpro.payrollpro {
     requires java.sql;
 
 
+    exports com.payrollpro.payrollpro.model;
     exports com.payrollpro.payrollpro.controller;
     opens com.payrollpro.payrollpro.controller to javafx.fxml;
 }

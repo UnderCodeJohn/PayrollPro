@@ -15,9 +15,9 @@
    <children>
       <VBox fx:id="containerPane" alignment="CENTER" fillWidth="false" prefHeight="600.0" prefWidth="750.0">
          <children>
-            <VBox fx:id="employeePane" alignment="CENTER" fillWidth="false" prefHeight="493.0" prefWidth="614.0">
+            <VBox fx:id="employeePane" alignment="CENTER" fillWidth="false" prefHeight="493.0" prefWidth="729.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="561.0" spacing="300.0">
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="689.0" spacing="450.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Table">
                            <font>
@@ -33,21 +33,22 @@
                         <Insets top="20.0" />
                      </VBox.margin>
                   </HBox>
-                   <TableView fx:id="employeeTable" prefHeight="400" prefWidth="616.0">
+                   <TableView fx:id="employeeTable" prefHeight="343.0" prefWidth="693.0">
                        <columns>
                            <TableColumn fx:id="idCol" prefWidth="92.0" text="Employee ID" />
                            <TableColumn fx:id="nameCol" prefWidth="106.0" text="Employee Name" />
-                           <TableColumn fx:id="addressCol" prefWidth="59.0" text="Address" />
-                           <TableColumn fx:id="postalCodeCol" prefWidth="78.0" text="Postal Code" />
-                           <TableColumn fx:id="emailCol" prefWidth="92.0" text="Email" />
-                           <TableColumn fx:id="jobTitleCol" prefWidth="96.0" text="Job Title" />
-                           <TableColumn fx:id="userIdCol" prefWidth="90.0" text="User ID" />
+                           <TableColumn fx:id="addressCol" prefWidth="97.0" text="Address" />
+                           <TableColumn fx:id="postalCodeCol" prefWidth="81.0" text="Postal Code" />
+                           <TableColumn fx:id="phoneCol" prefWidth="79.0" text="Phone" />
+                           <TableColumn fx:id="emailCol" prefWidth="90.0" text="Email" />
+                           <TableColumn fx:id="jobTitleCol" prefWidth="91.0" text="Job Title" />
+                           <TableColumn fx:id="userIdCol" prefWidth="55.0" text="User ID" />
                        </columns>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                    </TableView>
-                  <HBox alignment="CENTER" prefHeight="25.0" prefWidth="561.0" spacing="130.0">
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="692.0" spacing="201.0">
                      <children>
                      
                          <Button onAction="#addEmployee" text="Add Employee" />
@@ -58,11 +59,11 @@
                         <Insets top="10.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="8.0" prefWidth="640.0">
+                  <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="692.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#backToHome" text="Back">
                            <HBox.margin>
-                              <Insets right="31.0" top="15.0" />
+                              <Insets top="15.0" />
                            </HBox.margin>
                         </Button>
                      </children>

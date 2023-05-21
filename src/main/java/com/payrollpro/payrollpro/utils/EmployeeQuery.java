@@ -2,12 +2,35 @@ package com.payrollpro.payrollpro.utils;
 
 import com.payrollpro.payrollpro.model.Employee;
 import com.payrollpro.payrollpro.model.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public abstract class EmployeeQuery {
+
+    public static ObservableList <Employee> getAllEmployees() throws SQLException {
+        ObservableList<Employee> returnAllEmployees = FXCollections.observableArrayList();
+        String sql = "SELECT * FROM employees";
+        PreparedStatement ps = JDBC.connection.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            int employeeID = rs.getInt("Employee_ID");
+            String employeeName = rs.getString("Employee_Name");
+            String address = rs.getString("Address");
+            String postalCode = rs.getString("Postal_Code");
+            String phone = rs.getString("Phone");
+            String email = rs.getString("Email");
+            String jobTitle = rs.getString("Job_Title");
+            int userID = rs.getInt("User_ID");
+
+            Employee newEmployee = new Employee(employeeID, employeeName, address, postalCode, phone, email, jobTitle, userID);
+            returnAllEmployees.add(newEmployee);
+        }
+        return returnAllEmployees;
+    }
 
     public static void addEmployee(Employee employee, User user) throws SQLException {
         String insertUserSql = "INSERT INTO users (User_Name, Password, Admin)\n" +
