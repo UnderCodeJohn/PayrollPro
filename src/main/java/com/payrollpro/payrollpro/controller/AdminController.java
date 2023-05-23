@@ -27,7 +27,8 @@ public class AdminController implements Initializable , ViewChangeHelper {
     public void manageEmployees(ActionEvent actionEvent) throws IOException {
         changeViewAndCenter("manage-employee-view.fxml",rootPane);
     }
-    public void manageAccounts(ActionEvent actionEvent) {
+    public void manageAccounts(ActionEvent actionEvent) throws IOException {
+        changeViewAndCenter("manage-account-view.fxml",rootPane);
     }
     public void managePayroll(ActionEvent actionEvent) {
     }

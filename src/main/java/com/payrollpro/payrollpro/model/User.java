@@ -1,5 +1,12 @@
 package com.payrollpro.payrollpro.model;
 
+import com.payrollpro.payrollpro.utils.EmployeeQuery;
+import com.payrollpro.payrollpro.utils.UserQuery;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.sql.SQLException;
+
 public class User {
     private int userId;
     private String username;
@@ -46,5 +53,31 @@ public class User {
 
     public void setAdmin(int admin) {
         this.admin = admin;
+    }
+
+    public static User lookupUser(int userId) throws SQLException {
+
+        User listedUser = null;
+
+        ObservableList<User> allUsers = UserQuery.getAllUsers();
+
+        for(User user : allUsers) {
+            if (user.userId == userId){
+                listedUser = user;
+            }
+        }
+        return listedUser;
+    }
+
+    public static ObservableList<User> lookupUser (String username) throws SQLException {
+        ObservableList<User> listedUser = FXCollections.observableArrayList();
+        ObservableList<User> allUsers = UserQuery.getAllUsers();
+
+        for(User user : allUsers) {
+            if (user.getUsername().toLowerCase().contains(username)) {
+                listedUser.add(user);
+            }
+        }
+        return  listedUser;
     }
 }

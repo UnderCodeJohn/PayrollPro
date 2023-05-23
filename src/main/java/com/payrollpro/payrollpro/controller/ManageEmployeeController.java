@@ -12,6 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,6 +36,7 @@ public class ManageEmployeeController implements Initializable, ViewChangeHelper
     public ObservableList <Employee> allEmployees = EmployeeQuery.getAllEmployees();
     public static Employee SEmployee;
     public TextField searchField;
+    public Text noEmployeeFound;
 
     public ManageEmployeeController() throws SQLException {
     }
@@ -121,18 +123,20 @@ public class ManageEmployeeController implements Initializable, ViewChangeHelper
             int employeeSearchId = Integer.parseInt(searchField.getText());
             Employee listedEmployeeId = Employee.lookupEmployee(employeeSearchId);
             if (listedEmployeeId == null) {
-                System.out.println("No Employee Found");
+                noEmployeeFound.setText("No Employee Found");
                 employeeTable.setItems(null);
             } else {
                 listedEmployees.add(listedEmployeeId);
                 employeeTable.setItems(listedEmployees);
+                noEmployeeFound.setText("");
             }
         } catch (NumberFormatException | SQLException e) {
             if (listedEmployees.isEmpty()) {
-                System.out.println("No Employee Found");
+                noEmployeeFound.setText("No Employee Found");
                 employeeTable.setItems(null);
             } else {
                 employeeTable.setItems(listedEmployees);
+                noEmployeeFound.setText("");
             }
         }
     }
