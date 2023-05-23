@@ -1,5 +1,11 @@
 package com.payrollpro.payrollpro.model;
 
+import com.payrollpro.payrollpro.utils.EmployeeQuery;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.sql.SQLException;
+
 public class Employee {
     private int employeeId;
     private String name;
@@ -86,5 +92,31 @@ public class Employee {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public static Employee lookupEmployee(int employeeId) throws SQLException {
+
+        Employee listedEmployee = null;
+
+        ObservableList<Employee> allEmployees = EmployeeQuery.getAllEmployees();
+
+        for(Employee employee : allEmployees) {
+            if (employee.employeeId == employeeId){
+                listedEmployee = employee;
+            }
+        }
+        return listedEmployee;
+    }
+
+    public static ObservableList<Employee> lookupEmployee (String employeeName) throws SQLException {
+        ObservableList<Employee> listedEmployee = FXCollections.observableArrayList();
+        ObservableList<Employee> allEmployees = EmployeeQuery.getAllEmployees();
+
+        for(Employee employee : allEmployees) {
+            if (employee.getName().toLowerCase().contains(employeeName)) {
+                listedEmployee.add(employee);
+            }
+        }
+        return  listedEmployee;
     }
 }

@@ -74,4 +74,27 @@ public abstract class EmployeeQuery {
         ps.executeUpdate();
     }
 
+    public static void deleteEmployee(Employee employee) throws SQLException {
+        // Update the foreign key column in the employees table
+        String updateSQL = "UPDATE employees SET User_ID = NULL WHERE Employee_ID = ?";
+
+        // Delete the user from the users table
+        String deleteSQL = "DELETE FROM users WHERE User_ID = ?";
+
+        try (PreparedStatement updatePs = JDBC.connection.prepareStatement(updateSQL)) {
+            updatePs.setInt(1, employee.getEmployeeId());
+            updatePs.executeUpdate();
+        } catch (SQLException e) {
+            // Handle specific exception for the update statement
+            System.out.println("Error executing update statement: " + e.getMessage());
+        }
+
+        try (PreparedStatement deletePs = JDBC.connection.prepareStatement(deleteSQL)) {
+            deletePs.setInt(1, employee.getUserId());
+            deletePs.executeUpdate();
+        } catch (SQLException e) {
+            // Handle specific exception for the delete statement
+            System.out.println("Error executing delete statement: " + e.getMessage());
+        }
+    }
 }
