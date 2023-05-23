@@ -33,7 +33,7 @@ public abstract class EmployeeQuery {
     }
 
     public static void addEmployee(Employee employee, User user) throws SQLException {
-        String insertUserSql = "INSERT INTO users (User_Name, Password, Admin)\n" +
+        String insertUserSql = "INSERT INTO users (Username, Password, Admin)\n" +
                 "VALUES (?, ?, 0);";
         String setLastUserIdSql = "SET @last_user_id = LAST_INSERT_ID();";
         String insertEmployeeSql = "INSERT INTO employees (Employee_name, Address, Postal_Code, Phone, Email, Job_Title, User_ID)\n" +

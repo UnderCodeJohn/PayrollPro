@@ -27,4 +27,14 @@ public abstract class UserQuery {
         return returnAllUsers;
     }
 
+    public static void addUser(User user) throws SQLException {
+        String insertUserSql = "INSERT INTO users (Username, Password, Admin)\n" +
+                "VALUES (?, ?, 1);";
+
+        // Insert User
+        PreparedStatement insertUserPs = JDBC.connection.prepareStatement(insertUserSql);
+        insertUserPs.setString(1, user.getUsername());
+        insertUserPs.setString(2, user.getPassword());
+        insertUserPs.executeUpdate();
+    }
 }

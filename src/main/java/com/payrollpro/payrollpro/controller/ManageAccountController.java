@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -76,7 +77,8 @@ public class ManageAccountController implements Initializable , ViewChangeHelper
         }
     }
 
-    public void addAdmin(ActionEvent actionEvent) {
+    public void addAdmin(ActionEvent actionEvent) throws IOException {
+        changeViewAndCenter("add-account-view.fxml",rootPane);
     }
 
     public void editAccount(ActionEvent actionEvent) {
@@ -85,6 +87,7 @@ public class ManageAccountController implements Initializable , ViewChangeHelper
     public void deleteAccount(ActionEvent actionEvent) {
     }
 
-    public void backToHome(ActionEvent actionEvent) {
+    public void backToHome(ActionEvent actionEvent) throws IOException {
+        changeViewAndCenter("admin-view.fxml",rootPane);
     }
 }
