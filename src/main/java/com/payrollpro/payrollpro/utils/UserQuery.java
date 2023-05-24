@@ -37,4 +37,39 @@ public abstract class UserQuery {
         insertUserPs.setString(2, user.getPassword());
         insertUserPs.executeUpdate();
     }
+
+    public static void updateUser(User user) throws SQLException {
+        String sql = "UPDATE users SET username = ?, password = ? WHERE User_ID = ?";
+        PreparedStatement ps = JDBC.connection.prepareStatement(sql);
+        ps.setString(1, user.getUsername());
+        ps.setString(2, user.getPassword());
+        ps.setInt(3, user.getUserId());
+
+        ps.executeUpdate();
+    }
+
+    public static void deleteUser(User user) throws SQLException {
+        // Update the foreign key column in the employees table
+        String updateSQL = "UPDATE employees SET User_ID = NULL WHERE User_ID = ?";
+
+        // Delete the user from the users table
+        String deleteSQL = "DELETE FROM users WHERE User_ID = ?";
+
+        try (PreparedStatement updatePs = JDBC.connection.prepareStatement(updateSQL)) {
+            updatePs.setInt(1, user.getUserId());
+            updatePs.executeUpdate();
+        } catch (SQLException e) {
+            // Handle specific exception for the update statement
+            System.out.println("Error executing update statement: " + e.getMessage());
+        }
+
+        try (PreparedStatement deletePs = JDBC.connection.prepareStatement(deleteSQL)) {
+            deletePs.setInt(1, user.getUserId());
+            deletePs.executeUpdate();
+        } catch (SQLException e) {
+            // Handle specific exception for the delete statement
+            System.out.println("Error executing delete statement: " + e.getMessage());
+        }
+    }
+
 }

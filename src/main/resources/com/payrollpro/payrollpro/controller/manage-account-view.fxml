@@ -14,7 +14,7 @@
 
 <AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.payrollpro.payrollpro.controller.ManageAccountController">
    <children>
-      <VBox fx:id="containerPane" alignment="CENTER" fillWidth="false" prefHeight="600.0" prefWidth="750.0">
+      <VBox fx:id="containerPane" alignment="CENTER" fillWidth="false" layoutX="22.0" prefHeight="600.0" prefWidth="750.0">
          <children>
             <VBox fx:id="accountPane" alignment="CENTER" fillWidth="false" prefHeight="493.0" prefWidth="729.0">
                <children>
@@ -66,11 +66,11 @@
                         <Insets />
                      </VBox.margin>
                   </TableView>
-                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="640.0" spacing="155.0">
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="640.0" spacing="167.0">
                      <children>
                         <Button onAction="#addAdmin" text="Add Admin Account" />
                         <Button onAction="#editAccount" text="Edit Account" />
-                        <Button onAction="#deleteAccount" text="Deactivate Account" />
+                        <Button onAction="#deleteAccount" text="Delete Account" />
                      </children>
                      <padding>
                         <Insets top="10.0" />

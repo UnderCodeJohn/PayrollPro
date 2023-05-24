@@ -114,8 +114,6 @@ public class ManageEmployeeController implements Initializable, ViewChangeHelper
         employeeTable.setItems(newEmployeeList);
     }
 
-    public Employee passEmployee(){return SEmployee;}
-
     public void employeeSearch(KeyEvent keyEvent) throws SQLException {
         String employeeSearch = searchField.getText().toLowerCase();
         ObservableList<Employee> listedEmployees = Employee.lookupEmployee(employeeSearch);
@@ -140,4 +138,6 @@ public class ManageEmployeeController implements Initializable, ViewChangeHelper
             }
         }
     }
+    public Employee passEmployee(){return SEmployee;}
+
 }
