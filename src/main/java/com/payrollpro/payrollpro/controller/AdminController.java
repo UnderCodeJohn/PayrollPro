@@ -34,6 +34,7 @@ public class AdminController implements Initializable , ViewChangeHelper {
     }
     public void generateReports(ActionEvent actionEvent) {
     }
-    public void logout(ActionEvent actionEvent) {
+    public void logout(ActionEvent actionEvent) throws IOException {
+        changeViewAndCenter("login-view.fxml", rootPane);
     }
 }

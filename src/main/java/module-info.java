@@ -5,6 +5,7 @@ module com.payrollpro.payrollpro {
 
 
     exports com.payrollpro.payrollpro.model;
+    exports com.payrollpro.payrollpro.Enum;
     exports com.payrollpro.payrollpro.controller;
     opens com.payrollpro.payrollpro.controller to javafx.fxml;
 }

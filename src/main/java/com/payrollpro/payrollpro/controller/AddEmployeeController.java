@@ -64,7 +64,7 @@ public class AddEmployeeController implements Initializable, ViewChangeHelper, E
         boolean isValid = isErrorMessage(fields, textFields, labels, errorLabels);
 
         if (isValid) {
-            Employee newEmployee = new Employee(-1, employeeNameField.getText(), addressField.getText(), postalCodeField.getText(), phoneField.getText(), emailField.getText(), jobTitleField.getText(),-1);
+            Employee newEmployee = new Employee(-1, employeeNameField.getText(), addressField.getText(), postalCodeField.getText(), phoneField.getText(), emailField.getText(), jobTitleField.getText(),-1, false);
             User newUser = new User(-1,usernameField.getText(), passwordField.getText(), -1);
             EmployeeQuery.addEmployee(newEmployee, newUser);
             changeViewAndCenter("manage-employee-view.fxml",rootPane);

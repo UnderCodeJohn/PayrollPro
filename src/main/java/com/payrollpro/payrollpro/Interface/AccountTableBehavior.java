@@ -112,7 +112,6 @@ public interface AccountTableBehavior {
             }
         }
     }
-
 }
 
 

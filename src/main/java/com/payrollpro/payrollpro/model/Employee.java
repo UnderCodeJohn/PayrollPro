@@ -15,8 +15,9 @@ public class Employee {
     private String email;
     private String jobTitle;
     private int userId;
+    private boolean clockedIn;
 
-    public Employee(int employeeId, String name, String address, String postalCode, String phone, String email, String jobTitle, int userId) {
+    public Employee(int employeeId, String name, String address, String postalCode, String phone, String email, String jobTitle, int userId, boolean clockedIn) {
         this.employeeId = employeeId;
         this.name = name;
         this.address = address;
@@ -25,6 +26,7 @@ public class Employee {
         this.email = email;
         this.jobTitle = jobTitle;
         this.userId = userId;
+        this.clockedIn = clockedIn;
     }
 
     public Employee() {
@@ -92,6 +94,14 @@ public class Employee {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public boolean isClockedIn() {
+        return clockedIn;
+    }
+
+    public void setClockedIn(boolean clockedId) {
+        this.clockedIn = clockedId;
     }
 
     public static Employee lookupEmployee(int employeeId) throws SQLException {

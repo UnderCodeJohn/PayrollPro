@@ -1,6 +1,8 @@
 package com.payrollpro.payrollpro.controller;
 
 import com.payrollpro.payrollpro.Interface.ViewChangeHelper;
+import com.payrollpro.payrollpro.model.User;
+import com.payrollpro.payrollpro.model.UserSession;
 import com.payrollpro.payrollpro.utils.UserLoginQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +34,7 @@ public class LoginController implements Initializable , ViewChangeHelper {
     public TextField usernameField;
     public Text loginErrorMessage;
 
+
     /**
      * Initializes the login page and sets the UI elements' alignment to center.
      *
@@ -50,21 +53,36 @@ public class LoginController implements Initializable , ViewChangeHelper {
     public void onLogin(ActionEvent actionEvent) throws SQLException, IOException {
         String username = usernameField.getText();
         String password = passwordField.getText();
-        boolean loginSuccessful;
 
-        loginSuccessful = UserLoginQuery.login(username,password);
+        try {
+            User userLoginSuccessful = UserLoginQuery.login(username, password);
 
-        if (loginSuccessful) {
-            System.out.println("Login Successful");
-            changeViewAndCenter("admin-view.fxml",rootPane);
-
-        } else {
-            System.out.println("Login Failed");
-            loginErrorMessage.setVisible(true);
-            loginErrorMessage.setText("Invalid username or password");
-            usernameField.clear();
-            passwordField.clear();
-            usernameField.requestFocus();
+            if (userLoginSuccessful != null) {
+                if (userLoginSuccessful.getAdmin() == 1) {
+                    System.out.println("Login Successful");
+                    changeViewAndCenter("admin-view.fxml", rootPane);
+                } else {
+                    System.out.println("Login Successful");
+                    changeViewAndCenter("user-view.fxml", rootPane);
+                    UserSession.setLoggedUser(userLoginSuccessful);
+                    System.out.println(userLoginSuccessful.getUsername());
+                }
+            } else {
+                System.out.println("Login Failed");
+                loginErrorMessage.setVisible(true);
+                loginErrorMessage.setText("Invalid username or password");
+                usernameField.clear();
+                passwordField.clear();
+                usernameField.requestFocus();
+            }
+        } catch (SQLException e) {
+            // Handle any potential SQL exceptions
+            e.printStackTrace();
+            // Display an error message or perform appropriate error handling
+        } catch (IOException e) {
+            // Handle any potential IO exceptions
+            e.printStackTrace();
+            // Display an error message or perform appropriate error handling
         }
     }
 }

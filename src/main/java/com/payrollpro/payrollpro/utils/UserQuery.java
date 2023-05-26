@@ -71,5 +71,4 @@ public abstract class UserQuery {
             System.out.println("Error executing delete statement: " + e.getMessage());
         }
     }
-
 }
